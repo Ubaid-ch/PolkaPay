@@ -1,5 +1,5 @@
 import Lithic from 'lithic';
-import { lockFunds, settleFunds } from "./vault";
+import { lockFunds, settleFunds } from "./vault.js";
 import { supabase } from "../index.js";
 import { keccak256, stringToBytes } from 'viem';
 
