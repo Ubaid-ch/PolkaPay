@@ -1,6 +1,6 @@
 import express from 'express';
 import { supabase } from '../index.js';
-import { getVaultBalance } from "../services/vault";
+import { getVaultBalance } from "../services/vault.js";
 const router = express.Router();
 
 
