@@ -1,0 +1,7 @@
+{
+  "watch": ["frontend/src", "backend/src"],
+  "ext": "ts,tsx,js,jsx,json",
+  "ignore": ["node_modules", "dist", ".git"],
+  "exec": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+  "delay": 500
+}
