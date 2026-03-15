@@ -1,7 +1,11 @@
 # PolkaPay - Virtual Cards Powered by Stablecoins
 
 <p align="center">
-<img src="./frontend/public/polkapay-logo-dark.png" alt="PKRX Logo" width="400" margin="auto" />
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./frontend/public/polkapay-logo-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./frontend/public/polkapay-logo.png">
+    <img src="./frontend/public/polkapay-logo-dark.png" width="400">
+  </picture>
 </p>
 
 A decentralized debit card platform built on Polkadot EVM, featuring smart contract vaults, Lithic card processing, and seamless crypto-to-fiat transactions.
