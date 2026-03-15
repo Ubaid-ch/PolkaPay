@@ -1,4 +1,8 @@
-# PolkaPay - Crypto Debit Cards
+# PolkaPay - Virtual Cards Powered by Stablecoins
+
+<p align="center">
+<img src="./frontend/public/polkapay-logo-dark.png" alt="PKRX Logo" width="400" margin="auto" />
+</p>
 
 A decentralized debit card platform built on Polkadot EVM, featuring smart contract vaults, Lithic card processing, and seamless crypto-to-fiat transactions.
 
@@ -91,6 +95,8 @@ polkapay/
 4. **Deposit to Vault**: Tokens are deposited into the smart contract vault
 5. **Make Transactions**: Simulate card transactions via Lithic sandbox
 6. **View Balance**: Real-time balance updates from vault contract
+7. **Transfer**: Transfer stablecoins to other address in Vault contract
+8. **Withdraw**: Withdraw stablecoins from Vault smart contract
 
 ## 🛠️ Development
 
@@ -117,14 +123,15 @@ forge build
 
 ### Cards
 - `POST /api/cards/create` - Create new card
-- `GET /api/cards/:wallet` - Get card info
+- `GET /api/cards/:walletAddress` - Get card info
+- `GET /api/cards/:walletAddress/reveal` - Reveal Card Details
 
 ### Transactions
 - `POST /api/transactions/simulate` - Simulate transaction
-- `GET /api/transactions/:wallet` - Get transaction history
+- `GET /api/transactions/:walletAddress` - Get transaction history
 
 ### Users
-- `GET /api/users/:wallet/balance` - Get vault balance
+- `GET /api/users/:walletAddress/balance` - Get vault balance
 
 ## 📊 Database Schema
 
@@ -146,19 +153,7 @@ CREATE TABLE users (
 );
 ```
 
-### Transactions Table
-```sql
-CREATE TABLE transactions (
-  id SERIAL PRIMARY KEY,
-  wallet_address VARCHAR(42) NOT NULL,
-  lithic_card_token VARCHAR(255) NOT NULL,
-  amount DECIMAL(18,6) NOT NULL,
-  merchant VARCHAR(255) NOT NULL,
-  status VARCHAR(50) DEFAULT 'pending',
-  lithic_transaction_id VARCHAR(255),
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-```
+
 
 ## 🔐 Environment Variables
 
